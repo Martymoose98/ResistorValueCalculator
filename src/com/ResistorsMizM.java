@@ -173,10 +173,8 @@ public class ResistorsMizM
 		String input = createInputMessageBox("This program calculates resistor values based on the resistor entered.\nEx. RED-BLUE-BROWN\nEnter a resistor.", "Resistor Calculator", null, null, JOptionPane.INFORMATION_MESSAGE);
 		ResistorValue[] values = parseResistor(input);
 
-		if (values == null)
-			System.exit(-1);
-
-		createMessageBox("The value of the resistor \"" + input + "\" is: " + calculate(values[0], values[1], values[2]) + " ohms.", "Resistor Calculator", JOptionPane.INFORMATION_MESSAGE);
+		if (values != null)
+			createMessageBox("The value of the resistor \"" + input + "\" is: " + calculate(values[0], values[1], values[2]) + " ohms.", "Resistor Calculator", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }
